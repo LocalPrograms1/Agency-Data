@@ -58,14 +58,13 @@ size_colors = {
 # Initialize Dash app
 app = dash.Dash(__name__)
 
-# Custom CSS styles
+# Custom CSS styles - only FontAwesome for icons
 external_stylesheets = [
-    'https://codepen.io/chriddyp/pen/bWLwgP.css',
     'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
 ]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-# Add custom CSS to override all fonts
+# Add comprehensive custom CSS to override all fonts
 app.index_string = '''
 <!DOCTYPE html>
 <html>
@@ -78,10 +77,25 @@ app.index_string = '''
             * {
                 font-family: Arial, Helvetica, sans-serif !important;
             }
-            body {
+            body, html {
                 font-family: Arial, Helvetica, sans-serif !important;
             }
-            .dash-table-container {
+            h1, h2, h3, h4, h5, h6 {
+                font-family: Arial, Helvetica, sans-serif !important;
+            }
+            p, span, div, label {
+                font-family: Arial, Helvetica, sans-serif !important;
+            }
+            .dash-table-container, .dash-table-container * {
+                font-family: Arial, Helvetica, sans-serif !important;
+            }
+            .Select-control, .Select-menu-outer, .Select-option {
+                font-family: Arial, Helvetica, sans-serif !important;
+            }
+            .dash-dropdown, .dash-dropdown * {
+                font-family: Arial, Helvetica, sans-serif !important;
+            }
+            .plotly .gtitle, .plotly .xtitle, .plotly .ytitle {
                 font-family: Arial, Helvetica, sans-serif !important;
             }
         </style>
