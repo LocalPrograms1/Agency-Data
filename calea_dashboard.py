@@ -74,7 +74,7 @@ app.layout = html.Div([
                     'textAlign': 'center',
                     'color': '#2c3e50',
                     'marginBottom': '30px',
-                    'fontFamily': 'Arial, sans-serif',
+                    'fontFamily': 'Arial, Helvetica, sans-serif',
                     'fontSize': '28px',
                     'fontWeight': '600'
                 })
@@ -89,8 +89,8 @@ app.layout = html.Div([
                 html.Div([
                     html.I(className="fas fa-building", style={'fontSize': '24px', 'color': '#3498db'}),
                     html.H3(id="total-agencies", children=str(len(df)), 
-                           style={'margin': '10px 0 5px 0', 'color': '#2c3e50'}),
-                    html.P("Total Agencies", style={'margin': '0', 'color': '#7f8c8d', 'fontSize': '14px'})
+                           style={'margin': '10px 0 5px 0', 'color': '#2c3e50', 'fontFamily': 'Arial, Helvetica, sans-serif'}),
+                    html.P("Total Agencies", style={'margin': '0', 'color': '#7f8c8d', 'fontSize': '14px', 'fontFamily': 'Arial, Helvetica, sans-serif'})
                 ], style={'textAlign': 'center'})
             ], className="kpi-card", style={
                 'backgroundColor': '#ffffff',
@@ -106,8 +106,8 @@ app.layout = html.Div([
                     html.I(className="fas fa-certificate", style={'fontSize': '24px', 'color': '#2ecc71'}),
                     html.H3(id="accredited-agencies", 
                            children=str(len(df[df["Award Status"] == "Accredited"])),
-                           style={'margin': '10px 0 5px 0', 'color': '#2c3e50'}),
-                    html.P("Accredited", style={'margin': '0', 'color': '#7f8c8d', 'fontSize': '14px'})
+                           style={'margin': '10px 0 5px 0', 'color': '#2c3e50', 'fontFamily': 'Arial, Helvetica, sans-serif'}),
+                    html.P("Accredited", style={'margin': '0', 'color': '#7f8c8d', 'fontSize': '14px', 'fontFamily': 'Arial, Helvetica, sans-serif'})
                 ], style={'textAlign': 'center'})
             ], className="kpi-card", style={
                 'backgroundColor': '#ffffff',
@@ -123,8 +123,8 @@ app.layout = html.Div([
                     html.I(className="fas fa-clipboard-check", style={'fontSize': '24px', 'color': '#f39c12'}),
                     html.H3(id="self-assessment", 
                            children=str(len(df[df["Award Status"] == "Self-Assessment"])),
-                           style={'margin': '10px 0 5px 0', 'color': '#2c3e50'}),
-                    html.P("Self-Assessment", style={'margin': '0', 'color': '#7f8c8d', 'fontSize': '14px'})
+                           style={'margin': '10px 0 5px 0', 'color': '#2c3e50', 'fontFamily': 'Arial, Helvetica, sans-serif'}),
+                    html.P("Self-Assessment", style={'margin': '0', 'color': '#7f8c8d', 'fontSize': '14px', 'fontFamily': 'Arial, Helvetica, sans-serif'})
                 ], style={'textAlign': 'center'})
             ], className="kpi-card", style={
                 'backgroundColor': '#ffffff',
@@ -140,8 +140,8 @@ app.layout = html.Div([
                     html.I(className="fas fa-users", style={'fontSize': '24px', 'color': '#9b59b6'}),
                     html.H3(id="avg-personnel", 
                            children=str(int(df["Personnel"].mean())),
-                           style={'margin': '10px 0 5px 0', 'color': '#2c3e50'}),
-                    html.P("Avg Personnel", style={'margin': '0', 'color': '#7f8c8d', 'fontSize': '14px'})
+                           style={'margin': '10px 0 5px 0', 'color': '#2c3e50', 'fontFamily': 'Arial, Helvetica, sans-serif'}),
+                    html.P("Avg Personnel", style={'margin': '0', 'color': '#7f8c8d', 'fontSize': '14px', 'fontFamily': 'Arial, Helvetica, sans-serif'})
                 ], style={'textAlign': 'center'})
             ], className="kpi-card", style={
                 'backgroundColor': '#ffffff', 
@@ -155,7 +155,7 @@ app.layout = html.Div([
         # Filters Row
         html.Div([
             html.Div([
-                html.Label("Program Type", style={'fontWeight': '600', 'color': '#2c3e50', 'marginBottom': '5px'}),
+                html.Label("Program Type", style={'fontWeight': '600', 'color': '#2c3e50', 'marginBottom': '5px', 'fontFamily': 'Arial, Helvetica, sans-serif'}),
                 dcc.Dropdown(
                     id='program-filter',
                     options=[{'label': 'All', 'value': 'All'}] + 
@@ -166,7 +166,7 @@ app.layout = html.Div([
             ], style={'width': '30%', 'display': 'inline-block', 'margin': '0 1.5%'}),
             
             html.Div([
-                html.Label("Size Group", style={'fontWeight': '600', 'color': '#2c3e50', 'marginBottom': '5px'}),
+                html.Label("Size Group", style={'fontWeight': '600', 'color': '#2c3e50', 'marginBottom': '5px', 'fontFamily': 'Arial, Helvetica, sans-serif'}),
                 dcc.Dropdown(
                     id='size-filter',
                     options=[{'label': 'All', 'value': 'All'}] + 
@@ -177,7 +177,7 @@ app.layout = html.Div([
             ], style={'width': '30%', 'display': 'inline-block', 'margin': '0 1.5%'}),
             
             html.Div([
-                html.Label("Award Status", style={'fontWeight': '600', 'color': '#2c3e50', 'marginBottom': '5px'}),
+                html.Label("Award Status", style={'fontWeight': '600', 'color': '#2c3e50', 'marginBottom': '5px', 'fontFamily': 'Arial, Helvetica, sans-serif'}),
                 dcc.Dropdown(
                     id='award-filter',
                     options=[
@@ -197,7 +197,7 @@ app.layout = html.Div([
             # Map
             html.Div([
                 html.H3("Geographic Distribution", 
-                       style={'textAlign': 'center', 'color': '#2c3e50', 'marginBottom': '20px'}),
+                       style={'textAlign': 'center', 'color': '#2c3e50', 'marginBottom': '20px', 'fontFamily': 'Arial, Helvetica, sans-serif'}),
                 dcc.Graph(id='agency-map')
             ], style={'width': '65%', 'display': 'inline-block', 'backgroundColor': '#ffffff',
                      'padding': '20px', 'borderRadius': '8px', 'boxShadow': '0 2px 8px rgba(0,0,0,0.1)',
@@ -206,7 +206,7 @@ app.layout = html.Div([
             # Program Type Distribution
             html.Div([
                 html.H3("Program Distribution", 
-                       style={'textAlign': 'center', 'color': '#2c3e50', 'marginBottom': '20px'}),
+                       style={'textAlign': 'center', 'color': '#2c3e50', 'marginBottom': '20px', 'fontFamily': 'Arial, Helvetica, sans-serif'}),
                 dcc.Graph(id='program-chart')
             ], style={'width': '30%', 'display': 'inline-block', 'backgroundColor': '#ffffff',
                      'padding': '20px', 'borderRadius': '8px', 'boxShadow': '0 2px 8px rgba(0,0,0,0.1)',
@@ -217,7 +217,7 @@ app.layout = html.Div([
         html.Div([
             html.Div([
                 html.H3("Agency Size Distribution", 
-                       style={'textAlign': 'center', 'color': '#2c3e50', 'marginBottom': '20px'}),
+                       style={'textAlign': 'center', 'color': '#2c3e50', 'marginBottom': '20px', 'fontFamily': 'Arial, Helvetica, sans-serif'}),
                 dcc.Graph(id='size-chart')
             ], style={'width': '48%', 'display': 'inline-block', 'backgroundColor': '#ffffff',
                      'padding': '20px', 'borderRadius': '8px', 'boxShadow': '0 2px 8px rgba(0,0,0,0.1)',
@@ -225,7 +225,7 @@ app.layout = html.Div([
             
             html.Div([
                 html.H3("Personnel vs Program Type", 
-                       style={'textAlign': 'center', 'color': '#2c3e50', 'marginBottom': '20px'}),
+                       style={'textAlign': 'center', 'color': '#2c3e50', 'marginBottom': '20px', 'fontFamily': 'Arial, Helvetica, sans-serif'}),
                 dcc.Graph(id='personnel-scatter')
             ], style={'width': '48%', 'display': 'inline-block', 'backgroundColor': '#ffffff',
                      'padding': '20px', 'borderRadius': '8px', 'boxShadow': '0 2px 8px rgba(0,0,0,0.1)',
@@ -235,7 +235,7 @@ app.layout = html.Div([
         # Data Table
         html.Div([
             html.H3("Agency Details", 
-                   style={'textAlign': 'center', 'color': '#2c3e50', 'marginBottom': '20px'}),
+                   style={'textAlign': 'center', 'color': '#2c3e50', 'marginBottom': '20px', 'fontFamily': 'Arial, Helvetica, sans-serif'}),
             dash_table.DataTable(
                 id='agency-table',
                 columns=[
@@ -251,8 +251,8 @@ app.layout = html.Div([
                 filter_action='native',
                 sort_action='native',
                 page_size=10,
-                style_cell={'textAlign': 'left', 'padding': '10px'},
-                style_header={'backgroundColor': '#3498db', 'color': 'white', 'fontWeight': '600'},
+                style_cell={'textAlign': 'left', 'padding': '10px', 'fontFamily': 'Arial, Helvetica, sans-serif'},
+                style_header={'backgroundColor': '#3498db', 'color': 'white', 'fontWeight': '600', 'fontFamily': 'Arial, Helvetica, sans-serif'},
                 style_data_conditional=[
                     {
                         'if': {'filter_query': '{Award Status} = Accredited'},
@@ -314,7 +314,7 @@ def update_dashboard(program_filter, size_filter, award_filter):
         mapbox_style='carto-positron',
         height=500
     )
-    map_fig.update_layout(margin={'r':0,'t':0,'l':0,'b':0})
+    map_fig.update_layout(margin={'r':0,'t':0,'l':0,'b':0}, font_family='Arial, Helvetica, sans-serif')
     
     # Program type chart
     program_counts = filtered_df['Program Type'].value_counts()
@@ -326,7 +326,7 @@ def update_dashboard(program_filter, size_filter, award_filter):
         height=400
     )
     program_fig.update_traces(textposition='inside', textinfo='percent+label')
-    program_fig.update_layout(showlegend=False, margin={'r':0,'t':0,'l':0,'b':0})
+    program_fig.update_layout(showlegend=False, margin={'r':0,'t':0,'l':0,'b':0}, font_family='Arial, Helvetica, sans-serif')
     
     # Size chart  
     size_counts = filtered_df['Size Group'].value_counts()
@@ -338,7 +338,7 @@ def update_dashboard(program_filter, size_filter, award_filter):
         height=400
     )
     size_fig.update_layout(showlegend=False, xaxis_title="Size Group", yaxis_title="Count",
-                          margin={'r':0,'t':0,'l':0,'b':0})
+                          margin={'r':0,'t':0,'l':0,'b':0}, font_family='Arial, Helvetica, sans-serif')
     
     # Personnel scatter
     personnel_fig = px.box(
@@ -349,7 +349,7 @@ def update_dashboard(program_filter, size_filter, award_filter):
         color_discrete_map=program_colors,
         height=400
     )
-    personnel_fig.update_layout(showlegend=False, margin={'r':0,'t':0,'l':0,'b':0})
+    personnel_fig.update_layout(showlegend=False, margin={'r':0,'t':0,'l':0,'b':0}, font_family='Arial, Helvetica, sans-serif')
     
     # Update KPIs
     total_agencies = str(len(filtered_df))
