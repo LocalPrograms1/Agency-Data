@@ -65,6 +65,38 @@ external_stylesheets = [
 ]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
+# Add custom CSS to override all fonts
+app.index_string = '''
+<!DOCTYPE html>
+<html>
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        {%favicon%}
+        {%css%}
+        <style>
+            * {
+                font-family: Arial, Helvetica, sans-serif !important;
+            }
+            body {
+                font-family: Arial, Helvetica, sans-serif !important;
+            }
+            .dash-table-container {
+                font-family: Arial, Helvetica, sans-serif !important;
+            }
+        </style>
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+    </body>
+</html>
+'''
+
 app.layout = html.Div([
     # Header
     html.Div([
