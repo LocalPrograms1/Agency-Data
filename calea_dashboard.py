@@ -58,58 +58,11 @@ size_colors = {
 # Initialize Dash app
 app = dash.Dash(__name__)
 
-# Custom CSS styles - only FontAwesome for icons
+# Custom CSS styles - FontAwesome for icons
 external_stylesheets = [
     'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
 ]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-
-# Add comprehensive custom CSS to override all fonts
-app.index_string = '''
-<!DOCTYPE html>
-<html>
-    <head>
-        {%metas%}
-        <title>{%title%}</title>
-        {%favicon%}
-        {%css%}
-        <style>
-            * {
-                font-family: Arial, Helvetica, sans-serif !important;
-            }
-            body, html {
-                font-family: Arial, Helvetica, sans-serif !important;
-            }
-            h1, h2, h3, h4, h5, h6 {
-                font-family: Arial, Helvetica, sans-serif !important;
-            }
-            p, span, div, label {
-                font-family: Arial, Helvetica, sans-serif !important;
-            }
-            .dash-table-container, .dash-table-container * {
-                font-family: Arial, Helvetica, sans-serif !important;
-            }
-            .Select-control, .Select-menu-outer, .Select-option {
-                font-family: Arial, Helvetica, sans-serif !important;
-            }
-            .dash-dropdown, .dash-dropdown * {
-                font-family: Arial, Helvetica, sans-serif !important;
-            }
-            .plotly .gtitle, .plotly .xtitle, .plotly .ytitle {
-                font-family: Arial, Helvetica, sans-serif !important;
-            }
-        </style>
-    </head>
-    <body>
-        {%app_entry%}
-        <footer>
-            {%config%}
-            {%scripts%}
-            {%renderer%}
-        </footer>
-    </body>
-</html>
-'''
 
 app.layout = html.Div([
     # Header
@@ -313,8 +266,8 @@ app.layout = html.Div([
         ], style={'backgroundColor': '#ffffff', 'padding': '20px', 'borderRadius': '8px',
                  'boxShadow': '0 2px 8px rgba(0,0,0,0.1)', 'margin': '20px'})
         
-    ], style={'backgroundColor': '#f8f9fa', 'minHeight': '100vh', 'padding': '0'})
-])
+    ], style={'backgroundColor': '#f8f9fa', 'minHeight': '100vh', 'padding': '0', 'fontFamily': 'Arial, Helvetica, sans-serif'})
+], style={'fontFamily': 'Arial, Helvetica, sans-serif'})
 
 # Callbacks
 @app.callback(

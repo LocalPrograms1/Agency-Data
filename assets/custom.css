@@ -1,0 +1,63 @@
+/* Force Arial/Helvetica fonts throughout the entire application */
+* {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+body, html {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* All headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* All text elements */
+p, span, div, label, a {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* Dash components */
+.dash-table-container, 
+.dash-table-container *,
+.dash-table-container .dash-cell,
+.dash-table-container .column-header {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* Dropdown components */
+.Select-control, 
+.Select-menu-outer, 
+.Select-option,
+.Select-value-label,
+.Select-placeholder {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.dash-dropdown, 
+.dash-dropdown *,
+._dash-undo-redo,
+.dropdown {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* Plotly chart text */
+.js-plotly-plot .plotly text,
+.js-plotly-plot .plotly .gtitle,
+.js-plotly-plot .plotly .xtitle, 
+.js-plotly-plot .plotly .ytitle,
+.js-plotly-plot .plotly .legend,
+.js-plotly-plot .plotly .annotation,
+svg text {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* Input fields */
+input, textarea, select {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* Buttons */
+button {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
